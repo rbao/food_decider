@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130607210151) do
+ActiveRecord::Schema.define(version: 20130610023052) do
+
+  create_table "decidings", force: true do |t|
+    t.string   "name"
+    t.string   "identifier"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "potential_decisions", force: true do |t|
+    t.integer  "deciding_id"
+    t.integer  "restaurant_id"
+    t.integer  "point",         default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "potential_decisions", ["deciding_id"], name: "index_potential_decisions_on_deciding_id", using: :btree
 
   create_table "restaurants", force: true do |t|
     t.string   "name"

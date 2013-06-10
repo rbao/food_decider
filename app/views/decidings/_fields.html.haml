@@ -1,0 +1,23 @@
+= f.label :name
+= f.text_field :name, class: 'input-block-level'
+
+= label_tag 'Select the restaurants you want others to choose from.'
+
+
+%table.table.table-striped
+  -@restaurants.each do |restaurant|
+    %tr.restaurant
+      %td= check_box_tag 'deciding[restaurant_ids][]', restaurant.id, f.object.restaurant_ids.include?(restaurant.id)
+      %td
+        = restaurant.name
+        %br
+        = restaurant.address_link
+        %br
+        = restaurant.menu_link
+        |
+        = restaurant.site_link
+        |
+        = restaurant.yelp_link
+        |
+        = restaurant.phone
+        

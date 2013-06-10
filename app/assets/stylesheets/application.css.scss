@@ -1,2 +1,10 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
+
+tr.restaurant td {
+  vertical-align: middle;
+}
+
+tr.restaurant input[type="checkbox"] {
+  margin-top: 0px;
+}

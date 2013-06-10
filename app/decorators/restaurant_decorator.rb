@@ -10,4 +10,20 @@ class RestaurantDecorator < Draper::Decorator
   #     end
   #   end
 
+  def site_link
+    h.link_to "Website", site unless site.blank?
+  end
+
+  def address_link
+    h.link_to address, "http://maps.google.com/?q=#{address}" unless address.blank?
+  end
+
+  def menu_link
+    h.link_to "Menu", menu unless menu.blank?
+  end
+
+  def yelp_link
+    h.link_to "Yelp Page", yelp unless yelp.blank?
+  end
+
 end

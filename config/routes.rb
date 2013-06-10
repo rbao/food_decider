@@ -1,4 +1,6 @@
 FoodDecider::Application.routes.draw do
+  resources :decidings
+
   resources :restaurants
 
   root 'static_pages#home'
