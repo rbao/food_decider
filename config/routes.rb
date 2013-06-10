@@ -1,5 +1,5 @@
 FoodDecider::Application.routes.draw do
-  resources :decidings
+  resources :decisions
 
   resources :restaurants
 

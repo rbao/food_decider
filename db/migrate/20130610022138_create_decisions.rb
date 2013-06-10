@@ -1,6 +1,6 @@
-class CreateDecidings < ActiveRecord::Migration
+class CreateDecisions < ActiveRecord::Migration
   def change
-    create_table :decidings do |t|
+    create_table :decisions do |t|
       t.string :name
       t.string :identifier
 

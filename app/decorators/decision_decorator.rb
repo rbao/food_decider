@@ -1,4 +1,4 @@
-class DecidingDecorator < Draper::Decorator
+class DecisionDecorator < Draper::Decorator
   delegate_all
 
   # Define presentation-specific methods here. Helpers are accessed through

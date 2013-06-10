@@ -1,0 +1,17 @@
+%h1 Listing decisions
+
+%table.table.table-striped
+  %tr
+    %th Identifier
+    %th Name
+    %th
+
+  - @decisions.each do |decision|
+    %tr
+      %td= link_to decision.identifier, decision
+      %td= decision.name
+      %td= icon_link decision, 'icon-remove', :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New decision', new_decision_path, class: 'btn btn-primary'
