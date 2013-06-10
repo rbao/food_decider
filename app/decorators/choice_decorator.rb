@@ -1,7 +1,7 @@
-class DecisionDecorator < Draper::Decorator
+class ChoiceDecorator < Draper::Decorator
   delegate_all
-  decorates_association :choices
 
+  decorates_association :restaurant
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
   #

@@ -1,1 +1,1 @@
-json.extract! @decision, :name, :identifier, :created_at, :updated_at
+json.extract! @decision, :id, :name, :created_at, :updated_at

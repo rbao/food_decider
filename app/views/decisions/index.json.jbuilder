@@ -1,4 +1,4 @@
 json.array!(@decisions) do |decision|
-  json.extract! decision, :name, :identifier
+  json.extract! decision, :id, :name
   json.url decision_url(decision, format: :json)
 end

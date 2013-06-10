@@ -2,14 +2,14 @@
 
 %table.table.table-striped
   %tr
-    %th Identifier
+    %th #
     %th Name
     %th
 
   - @decisions.each do |decision|
     %tr
-      %td= link_to decision.identifier, decision
-      %td= decision.name
+      %td= link_to decision.id, decision
+      %td= link_to decision.name, decision
       %td= icon_link decision, 'icon-remove', :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br

@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20130610023052) do
 
   create_table "decisions", force: true do |t|
     t.string   "name"
-    t.string   "identifier"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
