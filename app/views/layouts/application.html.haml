@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+%html
+  %head
+    %title FoodDecider
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    = csrf_meta_tags
+
+  %body
+    .navbar.navbar-inverse.navbar-static-top
+      .navbar-inner
+        = link_to 'FoodDecider', root_path, class: 'brand'
+
+    .container-fluid
+      .row-fluid
+        .span12
+          - if flash.any?
+            - flash.each do |k, v|
+              = content_tag :div, class: flash_css_class(k) do
+                %button.close(data-dismiss="alert") &times;
+                = v
+
+    .container-fluid
+      .row-fluid
+        .span12
+          = yield

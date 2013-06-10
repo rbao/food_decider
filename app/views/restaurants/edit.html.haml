@@ -1,7 +1,9 @@
-%h1 Editing restaurant
-
-= render 'form'
-
-= link_to 'Show', @restaurant
-\|
-= link_to 'Back', restaurants_path
+.span6.offset3
+  %h1 Edit Restaurant
+  = form_for @restaurant do |f|
+    %fieldset
+      = render 'shared/error_messages', object: f.object
+      = render 'fields', f: f
+      .btn-group
+        = f.submit 'Save Changes', class: 'btn btn-primary'
+        = link_to 'Back', restaurants_path, class: 'btn'

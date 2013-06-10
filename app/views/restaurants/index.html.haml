@@ -1,29 +1,18 @@
 %h1 Listing restaurants
 
-%table
+%table.table.table-striped
   %tr
     %th Name
-    %th Menu
-    %th Address
-    %th Phone
-    %th Site
-    %th Yelp
-    %th
-    %th
     %th
 
   - @restaurants.each do |restaurant|
     %tr
-      %td= restaurant.name
-      %td= restaurant.menu
-      %td= restaurant.address
-      %td= restaurant.phone
-      %td= restaurant.site
-      %td= restaurant.yelp
-      %td= link_to 'Show', restaurant
-      %td= link_to 'Edit', edit_restaurant_path(restaurant)
-      %td= link_to 'Destroy', restaurant, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to restaurant.name, restaurant
+      %td
+        = icon_link edit_restaurant_path(restaurant), 'icon-pencil'
+        = icon_link restaurant, 'icon-remove', :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
+.btn-group
+  = link_to 'New Restaurant', new_restaurant_path, class: 'btn btn-primary'
+  = link_to 'Back', root_path, class: 'btn'
 
-= link_to 'New Restaurant', new_restaurant_path

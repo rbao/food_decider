@@ -1,24 +1,22 @@
-%p#notice= notice
+.span6.offset3
+  %h1= @restaurant.name
 
-%p
-  %b Name:
-  = @restaurant.name
-%p
-  %b Menu:
-  = @restaurant.menu
-%p
-  %b Address:
-  = @restaurant.address
-%p
-  %b Phone:
-  = @restaurant.phone
-%p
-  %b Site:
-  = @restaurant.site
-%p
-  %b Yelp:
-  = @restaurant.yelp
+  %p
+    %b Menu:
+    = @restaurant.menu
+  %p
+    %b Address:
+    = @restaurant.address
+  %p
+    %b Phone:
+    = @restaurant.phone
+  %p
+    %b Site:
+    = @restaurant.site
+  %p
+    %b Yelp:
+    = @restaurant.yelp
 
-= link_to 'Edit', edit_restaurant_path(@restaurant)
-\|
-= link_to 'Back', restaurants_path
+  .btn-group
+    = link_to 'Edit', edit_restaurant_path(@restaurant), class: 'btn btn-primary'
+    = link_to 'Back', restaurants_path, class: 'btn'
