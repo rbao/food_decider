@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Item:
+  = @order.item
+%p
+  %b Price:
+  = @order.price
+%p
+  %b Note:
+  = @order.note
+%p
+  %b Group:
+  = @order.group
+
+= link_to 'Edit', edit_order_path(@order)
+\|
+= link_to 'Back', orders_path

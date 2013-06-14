@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130610023052) do
+ActiveRecord::Schema.define(version: 20130614192522) do
 
   create_table "choices", force: true do |t|
     t.integer  "decision_id"
@@ -29,6 +29,25 @@ ActiveRecord::Schema.define(version: 20130610023052) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "group_orders", force: true do |t|
+    t.string   "name"
+    t.text     "message"
+    t.integer  "restaurant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.text     "item"
+    t.decimal  "price",      precision: 8, scale: 2
+    t.text     "note"
+    t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orders", ["group_id"], name: "index_orders_on_group_id", using: :btree
 
   create_table "restaurants", force: true do |t|
     t.string   "name"

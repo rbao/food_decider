@@ -1,0 +1,23 @@
+%h1 Group Orders
+
+%table.table.table-striped
+  %tr
+    %th #
+    %th Rest. Name
+    %th Orders received
+    %th $$$
+    %th Order link
+    %th
+
+  - @group_orders.each do |group_order|
+    %tr
+      %td= link_to group_order.id, group_order
+      %td= link_to group_order.restaurant_name, group_order.restaurant
+      %td= link_to group_order.total_number_of_orders, group_order
+      %td= link_to group_order.total_dollar_amount, group_order
+      %td= link_to new_order_url(group_order), new_order_url(group_order)
+      %td
+        = icon_link edit_group_order_path(group_order), 'icon-edit'
+        = icon_link group_order, 'icon-remove', :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+= link_to 'New Group Order', new_group_order_path, class: 'btn btn-primary'

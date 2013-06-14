@@ -1,0 +1,9 @@
+.span6.offset3
+  %h1 New Order
+  = form_for @order, url: group_order_orders_path(@group_order) do |f|
+    %fieldset
+      = render 'shared/error_messages', object: f.object
+      = render 'fields', f: f
+      %br
+      = f.submit 'Submit Order', class: 'btn btn-primary'
+
