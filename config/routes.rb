@@ -4,7 +4,7 @@ FoodDecider::Application.routes.draw do
   resources :restaurants
 
   get '/v/:decision_id' => 'votes#new', as: :new_vote
-  post '/v' => 'votes#create', as: :votes
+  post '/v/:decision_id' => 'votes#create', as: :votes
 
 
   root 'static_pages#home'

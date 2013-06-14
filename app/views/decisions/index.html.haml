@@ -4,12 +4,14 @@
   %tr
     %th #
     %th Name
+    %th Vote Link
     %th
 
   - @decisions.each do |decision|
     %tr
       %td= link_to decision.id, decision
       %td= link_to decision.name, decision
+      %td= link_to new_vote_url(decision), new_vote_url(decision)
       %td= icon_link decision, 'icon-remove', :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br

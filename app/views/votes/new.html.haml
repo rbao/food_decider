@@ -1,8 +1,15 @@
 .span6.offset3
   %h1 Vote
-  = form_for @vote do |f|
-    %table.table.table-striped
-      - @votable_restaurants.each do |restaurant|
+  = form_for @vote, url: votes_path(@decision) do |f|
+    = render 'shared/error_messages', object: f.object
+    %small Choose yes or no for at least 1 restaurant.
+    %table.table.table-striped.table-bordered
+      %tr
+        %th Yes!
+        %th Nooo!
+      - @choices.each do |choice|
         %tr.restaurant
-          %td= check_box_tag 'vote[restaurant_ids][]', restaurant.id, f.object.restaurant_ids.include?(restaurant.id)
-          %td= render 'restaurants/restaurant_td', restaurant: restaurant
+          %td= radio_button_tag "vote[voted_choices][#{choice.id}]", 'yes', f.object.yes_choice_ids.include?(choice.id)
+          %td= radio_button_tag "vote[voted_choices][#{choice.id}]", 'no', f.object.no_choice_ids.include?(choice.id)
+          %td= render 'restaurants/restaurant_td', restaurant: choice.restaurant.decorate
+    = f.submit "Submit", class: 'btn btn-primary'
