@@ -1,8 +1,11 @@
 = f.label :item
-= f.text_field :item
+= f.text_field :item, class: 'input-block-level'
 
 = f.label :price
-= f.text_field :price
+= f.text_field :price, class: 'span6'
+%span
+  x 1.13 (HST) =
+%span.price-after-tax
 
 = f.label :note
-= f.text_area :note
+= f.text_area :note, class: 'input-block-level'
