@@ -3,9 +3,12 @@ class VotesController < ApplicationController
   before_action :new_vote
 
   def new
+    @choices = @vote.choices
   end
 
   def create
+    @choices = @vote.choices
+
     if @vote.save
       redirect_to decisions_path
     else
@@ -16,11 +19,10 @@ class VotesController < ApplicationController
   private
     def new_vote
       @vote = Vote.new(params[:vote])
-      @vote.choices = @choices
+      @vote.decision = @decision
     end
 
     def set_related_resources
       @decision = Decision.find(params[:decision_id])
-      @choices = @decision.choices
     end
 end

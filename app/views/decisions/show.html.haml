@@ -1,5 +1,5 @@
 .span6.offset3 
-  %h1= @decision.id
+  %h1= "Decision ##{@decision.id}"
 
   %table.table.table-striped
     - @decision.choices.each do |choice|

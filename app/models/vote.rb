@@ -1,9 +1,13 @@
 class Vote
   include ActiveModel::Model
 
-  attr_accessor :choices, :voted_choices, :yes_choice_ids, :no_choice_ids
+  attr_accessor :decision, :voted_choices, :yes_choice_ids, :no_choice_ids
 
   validate :voted
+
+  def choices
+    decision.choices
+  end
 
   def voted_choices
     @voted_choices ||= {}
@@ -30,11 +34,16 @@ class Vote
 
   def save
     return false unless valid?
-    choices.each do |choice|
-      choice.points += 1 if yes_choice_ids.include?(choice.id.to_s)
-      choice.points -= 2 if no_choice_ids.include?(choice.id.to_s)
-      choice.save
+    ActiveRecord::Base.transaction do
+      choices.each do |choice|
+        choice.points += 1 if yes_choice_ids.include?(choice.id.to_s)
+        choice.points -= 2 if no_choice_ids.include?(choice.id.to_s)
+        choice.save!
+      end
+      decision.votes += 1
+      decision.save!
     end
+    true
   end
 
   private

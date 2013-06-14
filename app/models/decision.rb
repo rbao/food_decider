@@ -2,7 +2,7 @@ class Decision < ActiveRecord::Base
 
   attr_accessor :restaurant_ids
 
-  has_many :choices, dependent: :destroy
+  has_many :choices, dependent: :destroy, order: 'points DESC'
   has_many :restaurants, through: :choices
 
   

@@ -3,10 +3,11 @@
   = form_for @vote, url: votes_path(@decision) do |f|
     = render 'shared/error_messages', object: f.object
     %small Choose yes or no for at least 1 restaurant.
-    %table.table.table-striped.table-bordered
+    %table.table.table-bordered
       %tr
         %th Yes!
         %th Nooo!
+        %th
       - @choices.each do |choice|
         %tr.restaurant
           %td= radio_button_tag "vote[voted_choices][#{choice.id}]", 'yes', f.object.yes_choice_ids.include?(choice.id)

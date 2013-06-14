@@ -4,6 +4,7 @@
   %tr
     %th #
     %th Name
+    %th # of votes received
     %th Vote Link
     %th
 
@@ -11,6 +12,7 @@
     %tr
       %td= link_to decision.id, decision
       %td= link_to decision.name, decision
+      %td= decision.votes
       %td= link_to new_vote_url(decision), new_vote_url(decision)
       %td= icon_link decision, 'icon-remove', :method => :delete, :data => { :confirm => 'Are you sure?' }
 
