@@ -1,11 +1,32 @@
+%table.table
+  %tr
+    %td= render 'restaurants/restaurant_td', restaurant: @order.restaurant.decorate
+
+= f.label :name
+= f.text_field :name, class: 'input-block-level'
+
 = f.label :item
 = f.text_field :item, class: 'input-block-level'
 
-= f.label :price
-= f.text_field :price, class: 'span6'
-%span
-  x 1.13 (HST) =
-%span.price-after-tax
-
-= f.label :note
-= f.text_area :note, class: 'input-block-level'
+.fluid-row
+  .span6
+    = f.label :price
+    .input-prepend.input
+      %span.add-on $
+      = f.text_field :price, class: 'span8'
+  .span3
+    = label_tag "Tax (#{f.object.tax_rate * 100}%)"
+    .input-prepend.input
+      %span.add-on $
+      = f.text_field :tax, class: 'order-tax span4', disabled: true, data: { rate: f.object.tax_rate }
+    = f.hidden_field :tax, class: 'order-tax'
+  .span3
+    = f.label :total
+    .input-prepend.input
+      %span.add-on $
+      = f.text_field :total, class: 'input-block-level order-total span4', disabled: true
+    = f.hidden_field :total, class: 'order-total'
+.fluid-row
+  .span12
+    = f.label :note
+    = f.text_area :note, class: 'input-block-level'

@@ -1,0 +1,41 @@
+.span10.offset1
+  %h1 Group Order ##{@group_order.id}
+  %table.table
+    %tr
+      %td= render 'restaurants/restaurant_td', restaurant: @group_order.restaurant
+  %h2 Orders
+  %table.table.table-striped
+    %tr
+      %th Name
+      %th Item
+      %th Note
+      %th Price
+      %th Tax
+      %th Total
+      %th
+      
+
+    - @orders.each do |order|
+      %tr
+        %td= order.name
+        %td= order.item
+        %td= order.note
+        %td= order.price
+        %td= order.tax
+        %td= order.total
+        %td
+          = icon_link edit_order_path(order), 'icon-edit'
+          = icon_link order, 'icon-remove', :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+    %tr
+      %td
+        %b Total
+      %td
+      %td
+      %td
+      %td
+      %td 
+        %b= @group_order.total_dollar_amount
+      %td
+
+  = link_to 'Back', back_url, class: 'btn'

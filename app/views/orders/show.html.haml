@@ -1,18 +1,26 @@
-%p#notice= notice
+.span6.offset3
+  %h4 Thanks, your order has been received.
 
-%p
-  %b Item:
-  = @order.item
-%p
-  %b Price:
-  = @order.price
-%p
-  %b Note:
-  = @order.note
-%p
-  %b Group:
-  = @order.group
+  %p
+    %b Name:
+    = @order.name
 
-= link_to 'Edit', edit_order_path(@order)
-\|
-= link_to 'Back', orders_path
+  %p
+    %b Item:
+    = @order.item
+
+  %p
+    %b Price:
+    = @order.price
+
+  %p
+    %b Tax:
+    = @order.tax
+
+  %p
+    %b Total:
+    = @order.total
+
+  %p
+    %b Note:
+    = @order.note

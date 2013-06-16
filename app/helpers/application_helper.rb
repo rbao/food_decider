@@ -14,4 +14,8 @@ module ApplicationHelper
       when :alert then "alert alert-error"
     end
   end
+
+  def back_url
+    request.referrer
+  end
 end

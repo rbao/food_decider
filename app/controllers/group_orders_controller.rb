@@ -1,6 +1,10 @@
 class GroupOrdersController < ApplicationController
   before_action :set_group_order, only: [:show, :edit, :update, :destroy]
 
+  def show
+    @orders = @group_order.orders
+  end
+
   # GET /group_orders
   # GET /group_orders.json
   def index
@@ -59,11 +63,11 @@ class GroupOrdersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_group_order
-      @group_order = GroupOrder.find(params[:id])
+      @group_order = GroupOrder.find(params[:id]).decorate
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_order_params
-      params.require(:group_order).permit(:name, :restaurant_id, :message)
+      params.require(:group_order).permit(:name, :restaurant_id, :tax_rate, :message)
     end
 end

@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20130614192522) do
 
   create_table "group_orders", force: true do |t|
     t.string   "name"
+    t.decimal  "tax_rate",      precision: 8, scale: 2, default: 0.13
     t.text     "message"
     t.integer  "restaurant_id"
     t.datetime "created_at"
@@ -39,15 +40,18 @@ ActiveRecord::Schema.define(version: 20130614192522) do
   end
 
   create_table "orders", force: true do |t|
+    t.string   "name"
     t.text     "item"
-    t.decimal  "price",      precision: 8, scale: 2
+    t.decimal  "price",          precision: 8, scale: 2
+    t.decimal  "tax",            precision: 8, scale: 2
+    t.decimal  "total",          precision: 8, scale: 2
     t.text     "note"
-    t.integer  "group_id"
+    t.integer  "group_order_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "orders", ["group_id"], name: "index_orders_on_group_id", using: :btree
+  add_index "orders", ["group_order_id"], name: "index_orders_on_group_order_id", using: :btree
 
   create_table "restaurants", force: true do |t|
     t.string   "name"

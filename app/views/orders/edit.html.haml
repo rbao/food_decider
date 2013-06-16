@@ -1,7 +1,12 @@
-%h1 Editing order
+.span6.offset3
+  %h1 Edit Order ##{@order.id}
+  = form_for @order do |f|
+    %fieldset
+      = render 'shared/error_messages', object: f.object
+      = render 'fields', f: f
+      .fluid-row
+        .span12
+          .btn-group
+            = f.submit 'Save Changes', class: 'btn btn-primary'
+            = link_to 'Back', group_order_path(@order.group_order), class: 'btn'
 
-= render 'form'
-
-= link_to 'Show', @order
-\|
-= link_to 'Back', orders_path

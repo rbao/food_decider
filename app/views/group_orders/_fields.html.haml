@@ -2,5 +2,8 @@
 - selected = f.object.restaurant_id || params[:restaurant_id]
 = f.select :restaurant_id, Restaurant.all.collect { |r| [r.name, r.id] }, selected: selected, class: 'input-block-level'
 
+= f.label :tax_rate, "Tax Rate (etc. 0.13)"
+= f.text_field :tax_rate, class: 'input-block-level'
+
 = f.label :message
 = f.text_area :message, class: 'input-block-level'

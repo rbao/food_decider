@@ -1,7 +1,7 @@
 FoodDecider::Application.routes.draw do
   get '/o/:group_order_id' => 'orders#new', as: :new_order
 
-  resources :group_orders, except: [:show] do
+  resources :group_orders do
     resources :orders, shallow: true, except: [:new]
   end
 
