@@ -1,6 +1,10 @@
+
 %table.table
   %tr
-    %td= render 'restaurants/restaurant_td', restaurant: @order.restaurant.decorate
+    %td= render 'restaurants/restaurant_td', restaurant: @order.restaurant
+
+- unless @group_order.message.blank?
+  %i *#{@group_order.message}
 
 = f.label :name
 = f.text_field :name, class: 'input-block-level'

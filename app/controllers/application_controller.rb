@@ -7,13 +7,13 @@ class ApplicationController < ActionController::Base
 
   protected
     def require_login?
-      false
+      true
     end
 
     def authenticate
       return true unless require_login?
       authenticate_or_request_with_http_basic('Administration') do |username, password|
-        username == 'admin' && password == 'test1234'
+        username == 'admin' && password == 'eateateat'
       end
     end
 end

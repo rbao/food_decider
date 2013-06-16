@@ -9,6 +9,7 @@ FoodDecider::Application.routes.draw do
 
   resources :restaurants
 
+  get 'v/success' => 'votes#success', as: :success_vote
   get '/v/:decision_id' => 'votes#new', as: :new_vote
   post '/v/:decision_id' => 'votes#create', as: :votes
 

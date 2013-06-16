@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    @order = Order.new
+    @order = Order.new.decorate
     @order.group_order = @group_order
   end
 
@@ -20,12 +20,12 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
+    @order = Order.new(order_params).decorate
     @order.group_order = @group_order
 
     respond_to do |format|
       if @order.save
-        format.json { render action: 'show', status: :created, location: @order }
+        format.html { render action: 'show', status: :created, location: @order }
       else
         format.html { render action: 'new' }
         format.json { render json: @order.errors, status: :unprocessable_entity }
@@ -58,6 +58,10 @@ class OrdersController < ApplicationController
   end
 
   private
+    def require_login?
+      return false if ['new', 'create', 'show'].include?(params[:action])
+      true
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_order
       @order = Order.find(params[:id])

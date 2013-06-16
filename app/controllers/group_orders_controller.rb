@@ -41,7 +41,7 @@ class GroupOrdersController < ApplicationController
   def update
     respond_to do |format|
       if @group_order.update(group_order_params)
-        format.html { redirect_to @group_order, notice: 'Group order was successfully updated.' }
+        format.html { redirect_to group_orders_path, notice: 'Group order was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

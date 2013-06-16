@@ -12,5 +12,5 @@
         %tr.restaurant
           %td= radio_button_tag "vote[voted_choices][#{choice.id}]", 'yes', f.object.yes_choice_ids.include?(choice.id)
           %td= radio_button_tag "vote[voted_choices][#{choice.id}]", 'no', f.object.no_choice_ids.include?(choice.id)
-          %td= render 'restaurants/restaurant_td', restaurant: choice.restaurant.decorate
+          %td= render 'restaurants/restaurant_td', restaurant: choice.restaurant
     = f.submit "Submit", class: 'btn btn-primary'
