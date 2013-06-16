@@ -13,7 +13,6 @@ require "rbao_cap_recipes/shared_config"
 require "rbao_cap_recipes/check"
 require "rbao_cap_recipes/db"
 require "rbao_cap_recipes/git"
-require "rbao_cap_recipes/secret_token"
 
 # Stage specific settings will override
 set :user, "www-data"
@@ -22,7 +21,8 @@ set(:deploy_to) { "/var/www/#{application}" }
 set :deploy_via, :remote_cache
 set :use_sudo, false
 set :shared_config_files, [['database.yml.sample', 'database.yml'],
-                           ['application.yml.sample', 'application.yml']]
+                           ['application.yml.sample', 'application.yml'],
+                           ['config/initializers/secret_token.rb.sample', 'config/initializers/secret_token.rb']]
 set :scm, :git 
 set :repository,  "git://github.com/rbao/food_decider.git"
 set :branch, "master"
