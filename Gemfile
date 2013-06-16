@@ -17,9 +17,11 @@ gem 'haml-rails'
 gem 'haml'
 gem 'draper'
 gem 'turbolinks'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.0.1'
 gem 'unicorn'
+gem 'figaro'
 gem 'capistrano'
 
 group :doc do
