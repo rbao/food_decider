@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/rbao/rbao_cap_recipes.git
+  revision: e2b614d4805ca659f4ffc3291ee9bba0f6df3824
+  branch: master
+  specs:
+    rbao_cap_recipes (0.0.1)
+      capistrano
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -220,6 +228,7 @@ DEPENDENCIES
   pry-rails
   quiet_assets
   rails (= 4.0.0.rc1)
+  rbao_cap_recipes!
   rspec-rails
   sass-rails (~> 4.0.0.rc1)
   sdoc
