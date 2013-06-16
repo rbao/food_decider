@@ -19,3 +19,4 @@
 /config/application.yml
 
 /config/database.yml
+/config/deploy/production.rb
