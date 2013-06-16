@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 1.0.1'
 gem 'unicorn'
 gem 'figaro'
 gem 'capistrano'
-em 'rbao_cap_recipes', git: 'git://github.com/rbao/rbao_cap_recipes.git', branch: 'master'
+gem 'rbao_cap_recipes', git: 'git://github.com/rbao/rbao_cap_recipes.git', branch: 'master'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
