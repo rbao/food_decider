@@ -22,7 +22,7 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 set :shared_config_files, [['database.yml.sample', 'database.yml'],
                            ['application.yml.sample', 'application.yml'],
-                           ['config/initializers/secret_token.rb.sample', 'config/initializers/secret_token.rb']]
+                           ['initializers/secret_token.rb.sample', 'initializers/secret_token.rb']]
 set :scm, :git 
 set :repository,  "git://github.com/rbao/food_decider.git"
 set :branch, "master"

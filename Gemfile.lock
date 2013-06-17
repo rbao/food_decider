@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/rbao/rbao_cap_recipes.git
-  revision: e2b614d4805ca659f4ffc3291ee9bba0f6df3824
+  revision: c8f8ee03e15fd82b5188c65a3b5323a5f61acdf7
   branch: master
   specs:
     rbao_cap_recipes (0.0.1)
