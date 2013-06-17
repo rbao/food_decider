@@ -1,8 +1,10 @@
 .span6.offset3
+
   %h4 
     Thanks, your order has been received.
-    %br
-    Your total is $#{@order.total}
+    - unless @order.total.blank?
+      %br
+      Your total is $#{@order.total}
 
   %p
     %b Name:
