@@ -7,7 +7,11 @@ class GroupOrder < ActiveRecord::Base
   end
 
   def total_dollar_amount
-    orders.map(&:total).inject(:+) || 0
+    t = 0
+    orders.each do |order|
+      t += order.total unless order.total.blank?
+    end
+    t
   end
 
 end
