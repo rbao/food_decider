@@ -21,6 +21,9 @@
 
 en:
   activerecord:
+    attributes:
+      order:
+        name: 'Your Name'
     errors:
       messages:
         accepted: "%{attribute} must be accepted."
