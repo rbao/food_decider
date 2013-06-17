@@ -64,7 +64,7 @@ class OrdersController < ApplicationController
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_order
-      @order = Order.find(params[:id])
+      @order = Order.find(params[:id]).decorate
     end
 
     def set_related_resources
