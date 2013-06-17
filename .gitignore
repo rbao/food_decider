@@ -23,3 +23,4 @@
 /config/initializers/secret_token.rb
 
 /public/assets
+.DS_Store
