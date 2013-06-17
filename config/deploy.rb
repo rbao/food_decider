@@ -7,6 +7,7 @@ require 'capistrano/ext/multistage'
 
 # Load 3rd-party recipes
 require "rbao_cap_recipes/base"
+require "rbao_cap_recipes/assets"
 require "rbao_cap_recipes/nginx"
 require "rbao_cap_recipes/unicorn"
 require "rbao_cap_recipes/shared_config"
