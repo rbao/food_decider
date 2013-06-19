@@ -2,7 +2,8 @@
   %h1 Vote
   = form_for @vote, url: votes_path(@decision) do |f|
     = render 'shared/error_messages', object: f.object
-    %small Choose yes or no for at least 1 restaurant.
+    %small Choose yes for the restaurant you like, or no for the restaurant you dislike.
+    %small Please choose yes or no for at least 1 restaurant.
     %table.table.table-bordered
       %tr
         %th Yes!
