@@ -15,11 +15,11 @@ Restaurant.create!(name: "Fresco's Fish & Chips", menu: 'http://frescosfishandch
   site: 'http://frescosfishandchips.com/', yelp: "http://www.yelp.com/biz/frescos-fish-and-chips-toronto")
 
 Restaurant.create!(name: "Ravi Soups", menu: 'http://ravisoup.com/', 
-  address: '392 Queen St West, Toronto', phone: '416-363-0588',
+  address: '322 Adelaide Street W, Toronto', phone: '647-435-8365',
   site: 'http://ravisoup.com/', yelp: "http://www.yelp.ca/biz/ravi-soups-toronto")
 
 Restaurant.create!(name: "Banh Mi Boys", menu: 'http://www.banhmiboys.com/menu.htm', 
-  address: '322 Adelaide Street W, Toronto', phone: '647-435-8365',
+  address: '392 Queen St West, Toronto', phone: '416-363-0588',
   site: 'http://www.banhmiboys.com/', yelp: "http://www.yelp.ca/biz/banh-mi-boys-toronto")
 
 Restaurant.create!(name: "Gandhi Indian Cuisine (Roti)", menu: 'http://www.desiconnection.ca/webmaster2/motherindia_menu.htm', 
