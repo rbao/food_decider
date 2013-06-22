@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0.rc1'
+gem 'rails', '>= 4.0.0.rc2'
 gem 'mysql2'
 
 gem 'therubyracer'
-gem 'sass-rails', '~> 4.0.0.rc1'
+gem 'sass-rails', '>= 4.0.0.rc2'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '>= 4.0.0'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass-rails'
