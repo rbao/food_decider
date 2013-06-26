@@ -20,6 +20,6 @@
       %td= link_to 'Edit', edit_order_path(order)
       %td= link_to 'Destroy', order, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
-
-= link_to 'New Order', new_order_path
+.btn-group
+  = link_to 'New Order', new_order_path
+  = link_to 'Back', root_path, class: 'btn'

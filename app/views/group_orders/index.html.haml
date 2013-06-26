@@ -17,7 +17,10 @@
       %td= link_to group_order.total_dollar_amount, group_order
       %td= link_to new_order_url(group_order), new_order_url(group_order)
       %td
+        = icon_link group_order, 'icon-file'
         = icon_link edit_group_order_path(group_order), 'icon-edit'
         = icon_link group_order, 'icon-remove', :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= link_to 'New Group Order', new_group_order_path, class: 'btn btn-primary'
+.btn-group
+  = link_to 'New Group Order', new_group_order_path, class: 'btn btn-primary'
+  = link_to 'Back', root_path, class: 'btn'

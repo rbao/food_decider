@@ -14,8 +14,10 @@
       %td= link_to decision.name, decision
       %td= decision.votes
       %td= link_to new_vote_url(decision), new_vote_url(decision)
-      %td= icon_link decision, 'icon-remove', :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td 
+        = icon_link decision, 'icon-file'
+        = icon_link decision, 'icon-remove', :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
-
-= link_to 'New decision', new_decision_path, class: 'btn btn-primary'
+.btn-group
+  = link_to 'New decision', new_decision_path, class: 'btn btn-primary'
+  = link_to 'Back', root_path, class: 'btn'
