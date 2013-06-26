@@ -24,6 +24,8 @@ en:
     attributes:
       order:
         name: 'Your Name'
+      group_order:
+        message: 'Additional messages to show on the ordering page.'
     errors:
       messages:
         accepted: "%{attribute} must be accepted."
